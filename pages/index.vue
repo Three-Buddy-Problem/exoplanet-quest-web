@@ -166,7 +166,8 @@ const steps2 = [
 ];
 
 const scale = 0.3;
-const model1 = "./spaceship2.glb";
+const config = useRuntimeConfig();
+const model1 = `${config.public.baseURL}spaceship2.glb`;
 const setup = () => {
   createThreesnap({
     particlesEnabled: false,
