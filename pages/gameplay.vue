@@ -4,12 +4,6 @@
   >
     <section class="w-full h-full bg-slate-400">
       <a-scene embedded>
-        <a-assets>
-          <img id="sky" src="./stars.jpg" />
-          <img id="planet1" src="./pla1.webp" />
-          <img id="planet2" src="./pla2.jpg" />
-          <img id="sun1" src="./sun.jpg" />
-        </a-assets>
         <a-sky src="./stars.jpg" radius="1200"></a-sky>
         <a-camera id="camera" position="0 3 0"></a-camera>
         <a-plane
