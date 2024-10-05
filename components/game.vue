@@ -6,14 +6,6 @@
       <a-scene embedded>
         <a-sky :src="`${config.public.baseURL}stars.jpg`" radius="1200"></a-sky>
         <a-camera id="camera" position="0 3 0"></a-camera>
-        <a-plane
-          position="0 0 -4"
-          rotation="-90 0 0"
-          width="4"
-          height="4"
-          color="#7BC8A4"
-        ></a-plane>
-
         <a-entity
           shadow="receive: true; cast: false"
           rotation="0 -270 0"

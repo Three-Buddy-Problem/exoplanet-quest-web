@@ -58,7 +58,7 @@
       <div class="page flex howPage" style="background: #040001">
         <ScrollDown :go-to="4" />
       </div>
-      <div class="page gamePage" ref="gamePage">
+      <div class="page gamePage" v-auto-animate ref="gamePage">
         <Game v-if="isGamePageVisible" />
       </div>
 
