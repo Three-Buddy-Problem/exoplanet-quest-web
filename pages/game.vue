@@ -50,13 +50,12 @@
         <ScrollDown :go-to="2" />
       </div>
       <div
-        class="page flex justify-center items-center missionPage"
-        style="background: #121212"
+        class="page flex howPage"
+        v-for="i in 4"
+        :key="i"
+        style="background: #040001"
       >
-        <ScrollDown :go-to="3" />
-      </div>
-      <div class="page flex howPage" style="background: #040001">
-        <ScrollDown :go-to="4" />
+        <ScrollDown :go-to="i + 2" />
       </div>
       <div class="page gamePage" v-auto-animate ref="gamePage">
         <Game v-if="isGamePageVisible" />
@@ -87,6 +86,16 @@ const setup = () => {
       {
         modelPath: model1,
         pageConfigs: [
+          {
+            position: { x: 0, y: 0, z: 0 },
+            rotation: { x: 0, y: 0, z: 0 },
+            scale: { x: scale, y: scale, z: scale },
+          },
+          {
+            position: { x: 0, y: 0, z: 0 },
+            rotation: { x: 0, y: 0, z: 0 },
+            scale: { x: scale, y: scale, z: scale },
+          },
           {
             position: { x: 0, y: 0, z: 0 },
             rotation: { x: 0, y: 0, z: 0 },
@@ -234,21 +243,50 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   background: black !important;
+  display: flex;
+  justify-items: center;
+  align-items: center;
 }
 
-.howPage::before {
+.howPage:nth-child(2)::before {
   content: "";
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: red;
-  background: url("./planet.webp");
+  width: 100%;
+  height: 100%;
+  background: url("./gp1.png");
   background-repeat: no-repeat;
+  background-position-y: 50%;
   background-size: contain;
-  top: 0rem;
-  left: 0;
 }
 
+.howPage:nth-child(3)::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: url("./gp2.png");
+  background-repeat: no-repeat;
+  background-position-y: 50%;
+  background-size: contain;
+}
+
+.howPage:nth-child(4)::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: url("./gp3.png");
+  background-repeat: no-repeat;
+  background-position-y: 50%;
+  background-size: contain;
+}
+
+.howPage:nth-child(5)::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: url("./gp4.png");
+  background-repeat: no-repeat;
+  background-position-y: 50%;
+  background-size: contain;
+}
 .gamePage {
   background: url("https://wallpapercave.com/wp/wp2461878.jpg");
   width: 100%;
