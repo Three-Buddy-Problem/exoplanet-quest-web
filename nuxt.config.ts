@@ -34,6 +34,11 @@ export default defineNuxtConfig({
     prefix: "",
     componentDir: "./components/ui",
   },
+  runtimeConfig: {
+    public: {
+      baseURL: process.env.NODE_ENV === "production" ? "../" : "./",
+    },
+  },
   css: ["~/assets/css/fonts.css"],
   app: {
     baseURL: "/exoplanet-quest-web/",
