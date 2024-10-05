@@ -1,0 +1,1 @@
+export { tailwindcss } from "./tailwind";
