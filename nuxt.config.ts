@@ -41,7 +41,7 @@ export default defineNuxtConfig({
   },
   css: ["~/assets/css/fonts.css"],
   app: {
-    baseURL: "./",
+    baseURL: "/exoplanet-quest-web/",
     pageTransition: { name: "page", mode: "out-in" },
     head: {
       meta: [

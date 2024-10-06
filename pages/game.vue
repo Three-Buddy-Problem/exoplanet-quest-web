@@ -57,8 +57,29 @@
       >
         <ScrollDown :go-to="i + 2" />
       </div>
+      <div class="page flex" style="background: #040001">
+        <five-ways class="hidden md:block" />
+        <section class="w-[100vw] md:w-[50vw] h-[100vh] flex flex-col">
+          <div
+            class="h-[50%] w-full"
+            :style="`background:url('${config.public.baseURL}five.png');background-size:contain;background-position: center center;background-repeat: no-repeat;`"
+          ></div>
+          <div
+            :style="`background:url('${config.public.baseURL}gp2.png');background-size:contain;background-position: center center;background-repeat: no-repeat;`"
+            class="h-[40%] w-full"
+          ></div>
+        </section>
+        <ScrollDown :go-to="7" />
+      </div>
       <div class="page gamePage" v-auto-animate ref="gamePage">
-        <Game v-if="isGamePageVisible" />
+        <Game
+          :red="true"
+          :blue="false"
+          :green="false"
+          :yellow="false"
+          :isPlanet="isExoplanet"
+          v-if="isGamePageVisible"
+        />
       </div>
 
       <div id="three-container"></div>
@@ -73,6 +94,7 @@ import { createThreesnap } from "threesnap";
 import "threesnap/style.css";
 
 const isGamePageVisible = ref(false);
+const isExoplanet = ref(true);
 
 const scale = 0;
 const config = useRuntimeConfig();
@@ -86,6 +108,11 @@ const setup = () => {
       {
         modelPath: model1,
         pageConfigs: [
+          {
+            position: { x: 0, y: 0, z: 0 },
+            rotation: { x: 0, y: 0, z: 0 },
+            scale: { x: scale, y: scale, z: scale },
+          },
           {
             position: { x: 0, y: 0, z: 0 },
             rotation: { x: 0, y: 0, z: 0 },
