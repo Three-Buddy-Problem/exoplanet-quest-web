@@ -73,10 +73,11 @@
       </div>
       <div class="page gamePage" v-auto-animate ref="gamePage">
         <Game
-          :red="true"
-          :blue="false"
-          :green="false"
-          :yellow="false"
+          :bar-level="`${inputValue}`"
+          :red="isRed"
+          :blue="isBlue"
+          :green="isGreen"
+          :yellow="isYellow"
           :isPlanet="isExoplanet"
           v-if="isGamePageVisible"
         />
@@ -91,6 +92,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
 import { createThreesnap } from "threesnap";
+import DATA from "@/public/synthetic_generated_data_sorted.json";
 import "threesnap/style.css";
 
 const isGamePageVisible = ref(false);
@@ -100,6 +102,7 @@ const scale = 0;
 const config = useRuntimeConfig();
 const model1 = `${config.public.baseURL}spaceship2.glb`;
 
+const inputValue = ref("2000");
 const setup = () => {
   createThreesnap({
     particlesEnabled: false,
@@ -162,7 +165,57 @@ const observeGamePage = () => {
   observer.observe(gamePage);
 };
 
+const route = useRoute();
+
+const isBlue = ref(false);
+const isRed = ref(true);
+const isYellow = ref(false);
+const isGreen = ref(false);
+
+const itemId = ref("");
+
+// Watch for changes in the route.query to update the id
+// watch(
+//   () => route.query.id,
+//   (newId) => {
+//     id.value = String(newId);
+//   },
+// );
+
+const gameData = ref<any>({});
+const index = ref(0);
+
 onMounted(() => {
+  if (route.query.id == undefined) {
+    itemId.value = "0";
+  } else {
+    itemId.value = String(route.query.id);
+  }
+  index.value = parseInt(itemId.value);
+
+  gameData.value = DATA.data[index.value] as any;
+  console.log(gameData.value);
+
+  // if (gameData.value.y_value.koi_disposition == 1) {
+  //   isExoplanet.value = true;
+  // } else {
+  //   isExoplanet.value = false;
+  // }
+  // inputValue.value = gameData.value.X_value.koi_insol;
+  // const colorLevel = gameData.value.X_value.koi_teq;
+  // if (colorLevel >= 2900) {
+  //   isBlue.value = true;
+  // }
+  // if (colorLevel < 2900 && colorLevel > 1934) {
+  //   isGreen.value = true;
+  // }
+  // if (colorLevel <= 1934 && colorLevel > 950) {
+  //   isYellow.value = true;
+  // }
+  // if (colorLevel <= 950 && colorLevel > 0) {
+  //   isRed.value = true;
+  // }
+  //
   setup();
   observeGamePage();
 

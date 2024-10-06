@@ -23,6 +23,41 @@
             position="1.5 1.8 5.5"
           ></a-video>
 
+          <a-box
+            scale="0.5 0.2 0.5"
+            position="2.5 3.76 3.5"
+            color="#454545"
+          ></a-box>
+          <a-box
+            id="bar"
+            color="lime"
+            :scale="`0.3 ${scale} 0.3`"
+            position="2.5 3 3.5"
+          >
+            <a-entity
+              text="value: Flux Level ;color: yellow;"
+              scale="10 10 10"
+              position="2 1.4 3.8"
+              color="#ff00ff"
+              rotation="0 -45 0"
+              wrap-count="60"
+            ></a-entity>
+
+            <a-entity
+              :text="`value: ${barLevel} ;color: white; `"
+              scale="10 10 10"
+              position="0.5 -0 5"
+              rotation="0 -65 0"
+              wrap-count="60"
+            ></a-entity>
+          </a-box>
+          <a-box color="black" scale="0.1 1.5 0.1" position="2.5 3 3.5"></a-box>
+          <a-box
+            scale="0.5 0.2 0.5"
+            position="2.5 2.25 3.5"
+            color="#454545"
+          ></a-box>
+
           <a-video
             v-if="blue"
             :src="`${config.public.baseURL}blue.mp4`"
@@ -101,5 +136,14 @@ const props = defineProps<{
   yellow: boolean;
   green: boolean;
   blue: boolean;
+  barLevel: string;
 }>();
+
+const calculateScale = () => {
+  const value = parseInt(props.barLevel, 10);
+  if (value < 0) return 0; // Ensure the scale doesn't go below 0
+  if (value > 6000) return 1.5; // Cap the scale at 1.5 for inputs above 6000
+  return (1.5 * value) / 6000; // Map input value from 0-6000 to 0-1.5
+};
+const scale = computed(() => calculateScale());
 </script>
