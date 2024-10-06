@@ -28,28 +28,29 @@
             position="2.5 3.76 3.5"
             color="#454545"
           ></a-box>
+
+          <a-entity
+            text="value: Flux Level ;color: yellow;"
+            scale="5 5 5"
+            position="3.5 3.7 5"
+            color="#ff00ff"
+            rotation="0 -45 0"
+            wrap-count="60"
+          ></a-entity>
+          <a-entity
+            :text="`value: ${barLevel} ;color: white; `"
+            scale="5 5 5"
+            position="3 3 5"
+            rotation="0 -65 0"
+            wrap-count="60"
+          ></a-entity>
+
           <a-box
             id="bar"
             color="lime"
             :scale="`0.3 ${scale} 0.3`"
             position="2.5 3 3.5"
           >
-            <a-entity
-              text="value: Flux Level ;color: yellow;"
-              scale="10 10 10"
-              position="2 1.4 3.8"
-              color="#ff00ff"
-              rotation="0 -45 0"
-              wrap-count="60"
-            ></a-entity>
-
-            <a-entity
-              :text="`value: ${barLevel} ;color: white; `"
-              scale="10 10 10"
-              position="0.5 -0 5"
-              rotation="0 -65 0"
-              wrap-count="60"
-            ></a-entity>
           </a-box>
           <a-box color="black" scale="0.1 1.5 0.1" position="2.5 3 3.5"></a-box>
           <a-box

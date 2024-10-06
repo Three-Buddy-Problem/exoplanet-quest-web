@@ -96,7 +96,7 @@ import DATA from "@/public/synthetic_generated_data_sorted.json";
 import "threesnap/style.css";
 
 const isGamePageVisible = ref(false);
-const isExoplanet = ref(true);
+const isExoplanet = ref(false);
 
 const scale = 0;
 const config = useRuntimeConfig();
@@ -194,28 +194,30 @@ onMounted(() => {
   index.value = parseInt(itemId.value);
 
   gameData.value = DATA.data[index.value] as any;
-  console.log(gameData.value);
+  if (toRaw(gameData.value).y_value.koi_disposition == 1) {
+    isExoplanet.value = true;
+  }
 
-  // if (gameData.value.y_value.koi_disposition == 1) {
-  //   isExoplanet.value = true;
-  // } else {
-  //   isExoplanet.value = false;
-  // }
-  // inputValue.value = gameData.value.X_value.koi_insol;
-  // const colorLevel = gameData.value.X_value.koi_teq;
-  // if (colorLevel >= 2900) {
-  //   isBlue.value = true;
-  // }
-  // if (colorLevel < 2900 && colorLevel > 1934) {
-  //   isGreen.value = true;
-  // }
-  // if (colorLevel <= 1934 && colorLevel > 950) {
-  //   isYellow.value = true;
-  // }
-  // if (colorLevel <= 950 && colorLevel > 0) {
-  //   isRed.value = true;
-  // }
-  //
+  if (gameData.value.y_value.koi_disposition == 1) {
+    isExoplanet.value = true;
+  } else {
+    isExoplanet.value = false;
+  }
+  inputValue.value = gameData.value.X_value.koi_insol;
+  const colorLevel = gameData.value.X_value.koi_teq;
+  if (colorLevel >= 2900) {
+    isBlue.value = true;
+  }
+  if (colorLevel < 2900 && colorLevel > 1934) {
+    isGreen.value = true;
+  }
+  if (colorLevel <= 1934 && colorLevel > 950) {
+    isYellow.value = true;
+  }
+  if (colorLevel <= 950 && colorLevel > 0) {
+    isRed.value = true;
+  }
+
   setup();
   observeGamePage();
 
