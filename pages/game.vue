@@ -314,7 +314,7 @@ onUnmounted(() => {
   width: 300px;
   height: 300px;
   background: red;
-  background: url("./plan2.webp");
+  background: url("../plan2.webp");
   background-repeat: no-repeat;
   background-size: contain;
   bottom: 0rem;
@@ -334,7 +334,7 @@ onUnmounted(() => {
   content: "";
   width: 100%;
   height: 100%;
-  background: url("./gp1.png");
+  background: url("../gp1.png");
   background-repeat: no-repeat;
   background-position-y: 50%;
   background-size: contain;
@@ -344,7 +344,7 @@ onUnmounted(() => {
   content: "";
   width: 100%;
   height: 100%;
-  background: url("./gp2.png");
+  background: url("../gp2.png");
   background-repeat: no-repeat;
   background-position-y: 50%;
   background-size: contain;
@@ -354,7 +354,7 @@ onUnmounted(() => {
   content: "";
   width: 100%;
   height: 100%;
-  background: url("./gp3.png");
+  background: url("../gp3.png");
   background-repeat: no-repeat;
   background-position-y: 50%;
   background-size: contain;
@@ -364,7 +364,7 @@ onUnmounted(() => {
   content: "";
   width: 100%;
   height: 100%;
-  background: url("./gp4.png");
+  background: url("../gp4.png");
   background-repeat: no-repeat;
   background-position-y: 50%;
   background-size: contain;
