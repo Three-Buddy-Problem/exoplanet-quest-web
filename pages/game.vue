@@ -65,7 +65,7 @@
             :style="`background:url('${config.public.baseURL}five.png');background-size:contain;background-position: center center;background-repeat: no-repeat;`"
           ></div>
           <div
-            :style="`background:url('${config.public.baseURL}gp2.png');background-size:contain;background-position: center center;background-repeat: no-repeat;`"
+            :style="`background:url('${config.public.baseURL}info.png');background-size:contain;background-position: center center;background-repeat: no-repeat;`"
             class="h-[40%] w-full"
           ></div>
         </section>

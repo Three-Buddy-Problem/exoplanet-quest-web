@@ -192,7 +192,7 @@ const setup = () => {
             scale: { x: scale - 0.2, y: scale - 0.2, z: scale - 0.2 },
           },
           {
-            position: { x: 0, y: 0, z: 20 },
+            position: { x: 50, y: 0, z: 20 },
             rotation: { x: 0, y: 90, z: 45 },
             scale: { x: scale, y: scale, z: scale },
           },
@@ -291,7 +291,7 @@ onMounted(() => {
   width: 300px;
   height: 300px;
   background: red;
-  background: url("./plan2.webp");
+  background: url("../plan2.webp");
   background-repeat: no-repeat;
   background-size: contain;
   bottom: 0rem;
@@ -310,7 +310,7 @@ onMounted(() => {
   width: 300px;
   height: 300px;
   background: red;
-  background: url("./planet.webp");
+  background: url("../planet.webp");
   background-repeat: no-repeat;
   background-size: contain;
   top: 0rem;
@@ -318,7 +318,7 @@ onMounted(() => {
 }
 
 .gamePage {
-  background: url("https://wallpapercave.com/wp/wp2461878.jpg");
+  background: url("../gamebg.png");
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
