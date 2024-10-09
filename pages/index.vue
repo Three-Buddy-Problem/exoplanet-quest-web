@@ -26,7 +26,7 @@
             <span class="md:hidden">
               By
               <a
-                href="https://www.spaceappschallenge.org/nasa-space-apps-2024/find-a-team/three-buddy-problem/"
+                href="https://github.com/Three-Buddy-Problem"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="underline-offset-2 underline"
@@ -38,7 +38,7 @@
           <div class="mt-5 font-normal md:mb-40 hidden md:block">
             By
             <a
-              href="https://www.spaceappschallenge.org/nasa-space-apps-2024/find-a-team/three-buddy-problem/"
+              href="https://github.com/Three-Buddy-Problem"
               target="_blank"
               rel="noopener noreferrer"
               class="underline-offset-2 underline"
