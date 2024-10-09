@@ -96,12 +96,12 @@
           webkit-playsinline=""
           geometry="primitive: cylinder; radius: 5; height: 3.6815; open-ended: true; theta-start: 142.5; theta-length: 75;"
           position="-2.5 1.6 4.33"
-          :src="`${config.public.baseURL}astrometry.mp4`"
+          :src="`${config.public.baseURL}astometry.mp4`"
           rotation="0 150 0"
           scale="-1 1 1"
         >
           <a-entity
-            text="value: Astrometry;"
+            text="value: Astometry;"
             scale="-10 10 10"
             position="-4.18 2.1 -4"
             rotation="0 0 0"
